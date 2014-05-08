@@ -7,7 +7,8 @@
     "term:open-split-left",
     "term:open-split-up",
     "term:open-split-right",
-    "term:open-split-down"
+    "term:open-split-down",
+    "term:open"
   ],
   "repository": "https://github.com/tjmehta/atom-term",
   "license": "MIT",

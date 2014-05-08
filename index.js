@@ -6,6 +6,7 @@ module.exports = {
     activate: function (state) {
       this.state = state;
       var self = this;
+      atom.workspaceView.command('term:open', self.openTerm.bind(self));
       ['up', 'right', 'down', 'left'].forEach(function (direction) {
         atom.workspaceView.command('term:open-split-'+direction, self.splitTerm.bind(self, direction));
       });
@@ -25,6 +26,12 @@ module.exports = {
       atom.workspace.getActivePane()['split'+direction]({
         items: [termView]
       });
+    },
+    openTerm: function() {
+      var termView = new TermView();
+      activePane = atom.workspace.getActivePane();
+      activePane.addItem(termView);
+      activePane.activateNextItem();
     },
     handleRemoveTerm: function (termView) {
       var termViews = this.termViews;
