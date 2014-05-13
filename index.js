@@ -44,7 +44,7 @@ module.exports = {
       termViews.splice(termViews.indexOf(termView), 1); // remove
     },
     deactivate: function () {
-      termViews.forEach(function (view) {
+      this.termViews.forEach(function (view) {
         view.deactivate();
       });
     },
