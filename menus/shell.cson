@@ -2,15 +2,16 @@
 # 'context-menu':
 #   '.overlayer':
 #       'Open terminal here': 'term:open'
-
 'menu': [
   {
     'label': 'Packages'
     'submenu': [
-      'label': 'term'
+      'label': 'Term'
       'submenu': [
-        { 'label': 'Open New Terminal in Right Pane', 'command': 'term:open-split-right' },
-        { 'label': 'Open New Terminal in Bottom Pane', 'command': 'term:open-split-down' }
+        { 'label': 'New Right Pane Terminal', 'command': 'term:open-split-right' },
+        { 'label': 'New Left Pane Terminal', 'command': 'term:open-split-left' },
+        { 'label': 'New Bottom Pane Terminal', 'command': 'term:open-split-down' },
+        { 'label': 'New Top Pane Terminal', 'command': 'term:open-split-up' },
       ]
     ]
   }
