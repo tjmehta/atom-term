@@ -6,6 +6,12 @@ module.exports = {
     configDefaults: {
       autoRunCommand: null
     },
+    config:{
+      autoRunCommand:{
+          type:'string',
+          default: null
+      }  
+    },
     activate: function (state) {
       this.state = state;
       var self = this;
