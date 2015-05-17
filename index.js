@@ -3,15 +3,18 @@ var TermView = require('./lib/TermView');
 
 module.exports = {
     termViews: [],
-    configDefaults: {
-      autoRunCommand: null
+    config: {
+      "autoRunCommand": {
+        "type": "string",
+        "default": null
+      }
     },
     activate: function (state) {
       this.state = state;
       var self = this;
-      atom.workspaceView.command('term:open', self.openTerm.bind(self));
+      atom.commands.add('atom-workspace','term:open', self.openTerm.bind(self));
       ['up', 'right', 'down', 'left'].forEach(function (direction) {
-        atom.workspaceView.command('term:open-split-'+direction, self.splitTerm.bind(self, direction));
+        atom.commands.add('atom-workspace','term:open-split-'+direction, self.splitTerm.bind(self, direction));
       });
       if (state.termViews) {
         // TODO: restore
