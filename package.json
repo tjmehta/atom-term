@@ -1,7 +1,7 @@
 {
   "name": "term",
   "main": "./index",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Open Terminal tabs in Atom.",
   "activationCommands": {
     "atom-workspace": [
